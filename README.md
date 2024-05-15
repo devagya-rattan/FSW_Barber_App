@@ -1,6 +1,6 @@
 
-# Project Title
-FSW Barber
+
+# FSW Barber
 A barber reservation Application where users can schedule
 their barber meeting prior.
 
@@ -17,4 +17,6 @@ their barber meeting prior.
 - Fullscreen mode
 - Cross platform
 - complety responsive
+
+
 
