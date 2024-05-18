@@ -1,11 +1,13 @@
 {
-  "type":"module",
   "name": "fsw_barber_app",
   "version": "1.0.0",
   "description": "A barber Reservation App",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "index": "nodemon index.js",
+    "client": "npm start --prefix barber",
+    "dev": "concurrently \"npm run index\" \"npm run client\""
   },
   "author": "Devagya Rattan",
   "license": "ISC",
