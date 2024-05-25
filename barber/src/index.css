@@ -163,6 +163,30 @@ input:focus{
   width: 80%;
   padding: 4px;
 }
+.search-bar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  margin: 20px;
+  gap: 10px;
+  
+}
+.search-bar input{
+  width: 70%;
+}
+.search-btn{
+  background-color: blueviolet;
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+.shopcard{
+  color: white;
+}
 
 
 

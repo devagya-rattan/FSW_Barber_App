@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     axios
       .post("http://localhost:8080/register", { name, email, password })
       .then((results) => console.log(results))
       .catch((err) => console.log(err));
+      navigate("/");
+      window.alert("Sccessfully registered!")
   };
   return (
     <>
@@ -58,5 +62,4 @@ const Signup = () => {
     </>
   );
 };
-
 export default Signup;
