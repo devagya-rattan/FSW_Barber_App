@@ -20,6 +20,7 @@ const Home = () => {
         return (
           <ShopCard
             key={key}
+            id={data.id}
             image_url={data.image_url}
             shopname={data.shop_name}
             address={data.address}

@@ -15,10 +15,12 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         <div className="navbar-contents">
-          <img
-            src="https://fullstackweek-barber.vercel.app/_next/image?url=%2Flogo.png&w=128&q=75"
-            alt="nil"
-          />
+          <Link to="/">
+            <img
+              src="https://fullstackweek-barber.vercel.app/_next/image?url=%2Flogo.png&w=128&q=75"
+              alt="nil"
+            />
+          </Link>
           <div className="hamburger-menu">
             <RxScissors onClick={activateClass} />
           </div>
@@ -31,10 +33,10 @@ const Navbar = () => {
           </div>
           <div className="menus">
             <div className="login">
-            <Link  className="login-link" to="/register">
-              <h3>Login</h3>
-            </Link>
-              <MdLogin className="login-btn"/>
+              <Link className="login-link" to="/register">
+                <h3>Login</h3>
+              </Link>
+              <MdLogin className="login-btn" />
             </div>
             <div className="reservations">
               <h4>Your reservations</h4>
