@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import barbershops from "./reservations";
 import { IoMdClose } from "react-icons/io";
 const Barberservices = () => {
-  const { id } = useParams();
   const [toggle, setToggle] = useState(false);
-  console.log(id);
+  const [value, setValue] = useState([]);
+  // console.log(id);
   const handleClick = (event, key) => {
+    setValue(barbershops[key].services)
+    console.log(value)
     setToggle(true);
-    if (toggle === true) {
-      setToggle(false);
-    }
     console.log(event.target);
+    // console.log(value);
     console.log("key index: ", key);
-    barbershops[key].services.map((data, value) => {
-      console.log(data, value);
-    });
+    // barbershops[key].services.map((data, value) => {
+    //  setValue(data)
+    // });
   };
   const closeToggle = () => {
     if (toggle === true) {
@@ -35,7 +35,9 @@ const Barberservices = () => {
           </div>
           <div className="menus">
             <div className="login">
-              <h3>Login</h3>
+              {value.map((data,index)=>{
+                <li className="res-list"  key={index}> {data} </li>
+              })}
             </div>
             <div className="reservations">
               <h4>Your reservations</h4>

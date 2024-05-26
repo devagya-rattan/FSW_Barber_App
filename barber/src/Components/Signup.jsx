@@ -11,10 +11,11 @@ const Signup = () => {
     e.preventDefault();
     axios
       .post("http://localhost:8080/register", { name, email, password })
-      .then((results) => console.log(results))
+      .then((results) =>{
+        if(results) window.alert("Successful registered!!!!!!");
+        else window.alert("Error in registration!!")
+      }) 
       .catch((err) => console.log(err));
-      navigate("/");
-      window.alert("Sccessfully registered!")
   };
   return (
     <>
@@ -26,6 +27,7 @@ const Signup = () => {
               <label>Name</label>
               <input
                 value={name}
+                required
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Enter your email"
                 type="text"
@@ -35,6 +37,7 @@ const Signup = () => {
               <label>Email</label>
               <input
                 value={email}
+                required
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 type="text"
@@ -44,6 +47,7 @@ const Signup = () => {
               <label>Password</label>
               <input
                 value={password}
+                required
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
                 type="password"
